@@ -1,7 +1,7 @@
 [app]
 
 # (str) Title of your application
-title = My Calculator
+title = Smart Calculator
 
 # (str) Package name
 package.name = myapp
@@ -37,7 +37,7 @@ version = 1.0
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3==3.10.11,kivy==2.2.1,kivymd==1.1.1
+requirements = python3==3.10.9,kivy==2.2.1,kivymd==1.1.1
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -48,7 +48,8 @@ requirements = python3==3.10.11,kivy==2.2.1,kivymd==1.1.1
 
 # (str) Icon of the application
 #icon.filename = %(source.dir)s/data/icon.png
-
+p4a.branch = stable
+p4a.bootstrap = sdl2
 # (list) Supported orientations
 # Valid options are: landscape, portrait, portrait-reverse or landscape-reverse
 orientation = portrait

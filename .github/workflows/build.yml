@@ -1,0 +1,33 @@
+name: Build Kivy APK
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    container:
+      image: kivy/buildozer:latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        run: |
+          pip install --upgrade pip
+          pip install cython==0.29.36
+
+      - name: Build Debug APK
+        run: |
+          buildozer android clean
+          buildozer android debug
+
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: kivy-apk
+          path: bin/*.apk

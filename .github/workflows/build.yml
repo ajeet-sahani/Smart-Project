@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: kivy/buildozer:stable
+      image: kivy/buildozer:latest
 
     steps:
       - name: Checkout Repository
